@@ -6,6 +6,8 @@
 *.ear
 *.iml
 
+.DS_Store
+
 # ignore Maven generated target folders
 target
 logs

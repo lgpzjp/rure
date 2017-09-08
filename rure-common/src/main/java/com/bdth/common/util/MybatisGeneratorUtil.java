@@ -105,7 +105,7 @@ public class MybatisGeneratorUtil {
 		Configuration config = cp.parseConfiguration(configFile);
 		DefaultShellCallback callback = new DefaultShellCallback(true);
 		MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
-		myBatisGenerator.generate(null);
+//		myBatisGenerator.generate(null);
 		for (String warning : warnings) {
 			System.out.println(warning);
 		}

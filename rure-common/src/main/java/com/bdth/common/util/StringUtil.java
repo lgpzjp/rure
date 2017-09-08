@@ -3,6 +3,8 @@ package com.bdth.common.util;
 
 import org.apache.commons.lang.StringUtils;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -152,6 +154,16 @@ public class StringUtil {
         } catch (Exception e) {
             return defaultValue;
         }
+    }
+
+    public static String Date2String(String param){
+        SimpleDateFormat sdf = new SimpleDateFormat(param);
+        return sdf.format(new Date());
+    }
+
+    public static String Date2String(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return sdf.format(new Date());
     }
 
 }

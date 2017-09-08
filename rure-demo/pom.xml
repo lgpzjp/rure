@@ -7,19 +7,42 @@
     <groupId>com.bdth</groupId>
     <artifactId>rure-demo</artifactId>
     <version>0.0.1</version>
-    <modules>
-        <module>rure-demo-common</module>
-    </modules>
     <packaging>pom</packaging>
 
     <name>rure-demo</name>
     <url>http://www.bdth.cn/</url>
+
+    <modules>
+        <module>rure-demo-common</module>
+        <module>rure-demo-dao</module>
+        <module>rure-demo-service</module>
+        <module>rure-demo-api</module>
+        <module>rure-demo-test</module>
+    </modules>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>com.bdth</groupId>
                 <artifactId>rure-demo-common</artifactId>
+                <version>0.0.1</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.bdth</groupId>
+                <artifactId>rure-demo-dao</artifactId>
+                <version>0.0.1</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.bdth</groupId>
+                <artifactId>rure-demo-api</artifactId>
+                <version>0.0.1</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.bdth</groupId>
+                <artifactId>rure-demo-service</artifactId>
                 <version>0.0.1</version>
                 <type>jar</type>
             </dependency>

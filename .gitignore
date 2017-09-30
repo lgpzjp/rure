@@ -6,6 +6,8 @@
 *.ear
 *.iml
 *.log
+*.cache
+*.lock
 
 .DS_Store
 

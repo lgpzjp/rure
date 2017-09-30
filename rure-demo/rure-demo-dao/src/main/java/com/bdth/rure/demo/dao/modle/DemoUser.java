@@ -5,7 +5,9 @@ import java.io.Serializable;
 /**
  * Created by Administrator on 2017/9/8.
  */
-public class DemoUser implements Serializable{
+public class DemoUser implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private Integer id;
 
     private String username;

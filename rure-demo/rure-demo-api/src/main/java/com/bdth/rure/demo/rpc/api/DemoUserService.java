@@ -14,4 +14,6 @@ public interface DemoUserService {
 
     List<DemoUser> selectDemoUser();
 
+    int selectDemoUserCount();
+
 }

@@ -18,13 +18,20 @@
     </sql>
 
     <!-- 根据用户获取所拥有的权限 -->
-    <select id="selectDemoUser" parameterType="java.lang.Integer" resultMap="DemoUserResultMap">
+    <select id="selectDemoUser"  resultMap="DemoUserResultMap">
         select
         <include refid="DemoUser_Column_List" />
-        from demo_user up
+        from demo_user where 1=1
+    </select>
+
+    <select id="selectDemoUserCount" resultType="int">
+        select count(*) from demo_user where 1=1
     </select>
 
     <insert id="insertDemoUser" parameterType="com.bdth.rure.demo.dao.modle.DemoUser">
+        <selectKey keyProperty="id" order="AFTER" resultType="int">
+            select LAST_INSERT_ID()
+        </selectKey>
         insert into demo_user (username, password, sex,crtime)
         values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{sex,jdbcType=TINYINT}, #{crtime,jdbcType=VARCHAR})
     </insert>

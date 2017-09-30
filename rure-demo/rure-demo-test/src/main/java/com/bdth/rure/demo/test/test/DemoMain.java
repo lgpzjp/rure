@@ -13,16 +13,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class DemoMain {
 
     public static void main(String[] args) {
-        DemoUser user = new DemoUser();
-        user.setUsername("abc");
-        user.setPassword(MD5Util.MD5("abc"));
-        user.setSex(1);
-        user.setCrtime(StringUtil.Date2String());
-
         String[] resources = new String[]{"classpath*:/spring-dubbo-consumer.xml"};
         BeanFactory factory = new ClassPathXmlApplicationContext(resources);
         DemoUserService demoUserService = (DemoUserService)factory.getBean("demoUserService");
-        DemoUser result = demoUserService.createUser(user);
+        int result = demoUserService.selectDemoUserCount();
         System.out.println(result);
     }
 }

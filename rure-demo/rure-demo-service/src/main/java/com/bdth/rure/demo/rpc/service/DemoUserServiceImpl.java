@@ -18,16 +18,15 @@ public class DemoUserServiceImpl  implements DemoUserService {
     private DemoUserMapper demoUserMapper;
 
     public DemoUser createUser(DemoUser bean) {
-        int id = demoUserMapper.insertDemoUser(bean);
-        if(id!=0){
-            bean.setId(id);
-        }else{
-            return null;
-        }
+        demoUserMapper.insertDemoUser(bean);
         return bean;
     }
 
     public List<DemoUser> selectDemoUser(){
         return demoUserMapper.selectDemoUser();
+    }
+
+    public int selectDemoUserCount(){
+        return demoUserMapper.selectDemoUserCount();
     }
 }

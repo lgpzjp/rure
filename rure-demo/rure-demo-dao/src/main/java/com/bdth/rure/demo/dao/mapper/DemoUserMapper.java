@@ -9,7 +9,9 @@ import java.util.List;
  */
 public interface DemoUserMapper {
 
-    int insertDemoUser(DemoUser bean);
+    void insertDemoUser(DemoUser bean);
 
     List<DemoUser> selectDemoUser();
+
+    int selectDemoUserCount();
 }

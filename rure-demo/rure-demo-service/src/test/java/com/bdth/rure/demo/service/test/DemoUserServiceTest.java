@@ -36,4 +36,9 @@ public class DemoUserServiceTest {
         DemoUser result = demoUserService.createUser(user);
         System.out.println(result);
     }
+
+    @Test
+    public void testAllCount(){
+
+    }
 }

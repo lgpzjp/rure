@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>rure</artifactId>
+        <groupId>com.bdth</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <packaging>pom</packaging>
+
+    <artifactId>rure-base</artifactId>
+    <url>http://www.bdth.cn/</url>
+
+    <modules>
+        <module>rure-base-common</module>
+        <module>rure-base-dao</module>
+        <module>rure-base-api</module>
+        <module>rure-base-service</module>
+        <module>rure-base-web</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.bdth</groupId>
+                <artifactId>rure-base-common</artifactId>
+                <version>0.0.1</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.bdth</groupId>
+                <artifactId>rure-base-dao</artifactId>
+                <version>0.0.1</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.bdth</groupId>
+                <artifactId>rure-base-api</artifactId>
+                <version>0.0.1</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.bdth</groupId>
+                <artifactId>rure-base-service</artifactId>
+                <version>0.0.1</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

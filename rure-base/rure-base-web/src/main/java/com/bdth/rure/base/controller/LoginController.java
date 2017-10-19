@@ -1,13 +1,16 @@
 package com.bdth.rure.base.controller;
 
-import com.bdth.rure.base.api.UserService;
 import com.bdth.rure.base.dao.modle.User;
-import com.bdth.rure.base.dao.modle.UserExample;
+import com.bdth.rure.base.exception.CustomException;
+import com.bdth.rure.base.service.IUserService;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.UnknownAccountException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -18,28 +21,27 @@ import java.util.List;
 public class LoginController {
 
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
-    @RequestMapping("/login")
-    public String login(HttpSession session, String usercode, String password) throws Exception{
-        //调用service校验用户账号和密码的正确性
-        //..
-        UserExample userExample = new UserExample();
-        userExample.createCriteria().andIdEqualTo("lisi");
-        List<User> list = userService.selectByExample(userExample);
-        for (User bean: list) {
-            System.out.println(bean.toString());
-            //如果service校验通过，将用户身份记录到session
-            session.setAttribute("usercode", bean.getUsername());
-        }
-
-        //重定向到商品查询页面
-        return "redirect:/index/main.action";
-    }
-
-    @RequestMapping("/index")
-    public String index() throws Exception{
-        System.out.println("login..........................page");
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() throws Exception {
         return "login";
     }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(HttpServletRequest request) throws Exception{
+
+        String exceptionClassName = (String) request.getAttribute("shiroLoginFailure");
+        if(exceptionClassName!=null){
+            if(UnknownAccountException.class.getName().equals(exceptionClassName)) {
+                throw new CustomException("用户名不存在！");
+            } else if(IncorrectCredentialsException.class.getName().equals(exceptionClassName)) {
+                throw new CustomException("用户名或密码错误");
+            } else {
+                throw new Exception();
+            }
+        }
+        return "login";
+    }
+
 }

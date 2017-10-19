@@ -2,12 +2,12 @@ package com.bdth.rure.web.test;
 
 
 import com.bdth.rure.base.api.UserService;
-import com.bdth.rure.base.dao.modle.User;
-import com.bdth.rure.base.dao.modle.UserExample;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+        import com.bdth.rure.base.dao.modle.User;
+        import com.bdth.rure.base.dao.modle.UserExample;
+        import org.springframework.beans.factory.BeanFactory;
+        import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.List;
+        import java.util.List;
 
 /**
  * Created by Administrator on 2017/9/30.

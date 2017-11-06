@@ -26,6 +26,7 @@
                 <!--/WEB-INF/img/** = anon-->
                 <!--/WEB-INF/js/** = anon-->
                 <!--/WEB-INF/styles/** = anon-->
+                /favicon.ico = anon
                 <!--/main.action = perms[main:query]-->
                 <!-- 请求 logout.action地址，shiro去清除session-->
                 /logout.action = logout

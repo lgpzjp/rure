@@ -9,7 +9,7 @@
 
     <dubbo:application name="rure-demo-rpc-test"/>
 
-    <dubbo:registry address="zookeeper://192.168.1.243:2181?backup=192.168.1.242:2181,192.168.1.241:2181"/>
+    <dubbo:registry address="zookeeper://221.178.170.207:32181?backup=221.178.170.207:22181,221.178.170.207:12181"/>
 
     <!-- 订阅服务 -->
     <dubbo:consumer check="false"/>

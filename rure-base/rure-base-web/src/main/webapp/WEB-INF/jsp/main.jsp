@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-    main page
+    main page<br>
+    <a href="/logout.action">logout</a>
 </body>
 </html>
